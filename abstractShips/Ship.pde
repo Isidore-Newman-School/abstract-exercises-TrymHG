@@ -1,13 +1,13 @@
 /*
 
-How many concrete classes?
+ How many concrete classes? Methods?
+ 5 concrete methods
+ 
+ How many abstract classes?
+ 1 concrete method
+ */
 
-
-How many abstract classes?
-
-*/
-
-public abstract class Ship {
+public abstract class Ship implements Comparable {
 
   private int x, y;
 
@@ -36,8 +36,16 @@ public abstract class Ship {
 
 
   public void move() { 
-    // your code here
+
+    if (x > width) {
+      x = 0;
+    } else {
+      x++;
+    }
   }
 
-  // abstract fire() method
+  public abstract void fire();
+
+  public abstract int compareTo();
+    
 }

@@ -12,7 +12,23 @@ public class DeathStar extends Ship {
     ellipse(getX()- 10, getY() - 10, 10, 10);
   }
 
-  // override the move() method
+  public void move() { 
+    super.move();
+    setY((int)(30 * cos(getX()/10.0)) + 100);
+  }
 
-  // fire()
+  public void fire() {
+    stroke(255, 0, 0);  
+    line(getX()- 10, getY() - 10, 0, getY());
+  }
+
+  public int compareTo() {
+    if (getY() < 135) {
+      return 1;
+    } else if (getY() < 150 && getY() >= 135) {
+      return 0;
+    } else {
+      return -1;
+    }
+  }
 }
